@@ -215,28 +215,15 @@ h3 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.hero-content .highlight {
-    color: var(--color-accent);
-    position: relative;
-    display: inline-block;
+.hero-logo {
+    max-width: 400px;
+    margin: 0 auto var(--spacing-md);
 }
 
-.hero-content .highlight::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
+.hero-logo img {
     width: 100%;
-    height: 3px;
-    background: var(--color-accent);
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.5s ease;
-}
-
-.hero-content:hover .highlight::after {
-    transform: scaleX(1);
-    transform-origin: left;
+    height: auto;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .hero-subtitle {
@@ -2411,12 +2398,17 @@ header.scrolled {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    aspect-ratio: 1/1;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .chairman-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
 }
 
 .chairman-info {
