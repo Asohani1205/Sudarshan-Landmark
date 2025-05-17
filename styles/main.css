@@ -104,18 +104,26 @@ h3 {
     height: 80px;
 }
 
-.logo h1 {
-    font-size: 1.8rem;
-    margin: 0;
-    color: var(--color-text);
-    font-family: var(--font-logo);
-    letter-spacing: 1px;
+.logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
-.main-nav ul {
+.logo img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.logo:hover img {
+    transform: scale(1.05);
+}
+
+.main-nav {
     display: flex;
-    list-style: none;
-    gap: var(--spacing-md);
+    gap: 2rem;
 }
 
 .main-nav a {
@@ -277,40 +285,7 @@ h3 {
 }
 
 .scroll-indicator {
-    position: absolute;
-    bottom: var(--spacing-lg);
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-xs);
-    color: var(--color-white);
-    animation: bounce 2s infinite;
-    cursor: pointer;
-    z-index: 3;
-}
-
-.scroll-indicator span {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.scroll-indicator i {
-    font-size: 1.2rem;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0) translateX(-50%);
-    }
-    40% {
-        transform: translateY(-20px) translateX(-50%);
-    }
-    60% {
-        transform: translateY(-10px) translateX(-50%);
-    }
+    display: none;
 }
 
 /* Projects Section */
@@ -1454,28 +1429,20 @@ header.scrolled {
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--primary-color);
     text-decoration: none;
-    font-family: 'Century Gothic', sans-serif;
-    position: relative;
-    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
 }
 
-.logo::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--secondary-color);
+.logo img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
     transition: var(--transition);
 }
 
-.logo:hover::after {
-    width: 100%;
+.logo:hover img {
+    transform: scale(1.05);
 }
 
 .main-nav {
@@ -2552,5 +2519,103 @@ header.scrolled {
     
     .chairman-info h3 {
         font-size: 1.8rem;
+    }
+}
+
+/* Side Navigation */
+.side-nav {
+    position: fixed;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 100;
+}
+
+.side-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.side-nav-item i {
+    font-size: 1.2rem;
+    color: var(--color-accent);
+}
+
+.side-nav-item span {
+    display: none;
+    white-space: nowrap;
+}
+
+.side-nav-item:hover {
+    background: var(--color-accent);
+    transform: translateX(10px);
+    padding-right: 2rem;
+}
+
+.side-nav-item:hover i {
+    color: white;
+}
+
+.side-nav-item:hover span {
+    display: inline;
+    color: white;
+}
+
+/* Update section IDs */
+#why-choose-us {
+    scroll-margin-top: 100px;
+}
+
+#luxury-villa {
+    scroll-margin-top: 100px;
+}
+
+#featured {
+    scroll-margin-top: 100px;
+}
+
+#contact {
+    scroll-margin-top: 100px;
+}
+
+/* Responsive Design for Side Navigation */
+@media (max-width: 768px) {
+    .side-nav {
+        left: 1rem;
+    }
+    
+    .side-nav-item {
+        padding: 0.8rem;
+    }
+    
+    .side-nav-item:hover {
+        padding-right: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .side-nav {
+        left: 0.5rem;
+    }
+    
+    .side-nav-item {
+        padding: 0.6rem;
+    }
+    
+    .side-nav-item:hover {
+        padding-right: 1.2rem;
     }
 } 
