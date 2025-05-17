@@ -97,11 +97,13 @@ h3 {
     transition: var(--transition);
     height: var(--header-height);
     padding: 0;
+    margin: 0;
 }
 
 .header-container {
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: none;
+    margin: 0;
     padding: 0;
     height: 100%;
     display: flex;
@@ -1440,8 +1442,9 @@ header.scrolled {
 }
 
 .header-container {
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: none;
+    margin: 0;
     padding: 0;
     height: 100%;
     display: flex;
@@ -2012,24 +2015,24 @@ header.scrolled {
     .hero-content h1 {
         font-size: 2rem;
     }
-
+    
     .hero-content p {
         font-size: 1rem;
     }
-
+    
     .section-title h2 {
         font-size: 2rem;
     }
-
+    
     .project-image {
         height: 200px;
     }
-
+    
     .contact-item {
         flex-direction: column;
         text-align: center;
     }
-
+    
     .btn {
         width: 100%;
         text-align: center;
