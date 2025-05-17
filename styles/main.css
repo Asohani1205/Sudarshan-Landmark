@@ -6,10 +6,10 @@
     --color-accent: #c8a97e;
     --color-text: #333333;
     --color-text-light: #666666;
-    --color-white: #ffffff;
+    --color-white: #f3f3f3;
     --color-black: #000000;
     --color-overlay: rgba(0, 0, 0, 0.5);
-    --color-gray: #f5f5f5;
+    --color-gray: #ededed;
     --color-dark: #000000;
     
     /* Typography */
@@ -49,6 +49,7 @@ body {
     color: var(--color-text);
     line-height: 1.6;
     overflow-x: hidden;
+    background: var(--color-white);
 }
 
 .container {
@@ -56,6 +57,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-sm);
+    background: transparent;
 }
 
 /* Typography */
@@ -304,7 +306,7 @@ h3 {
 /* Projects Section */
 .projects {
     padding: var(--spacing-xl) 0;
-    background: var(--color-background);
+    background: var(--color-white);
 }
 
 .projects-content {
@@ -863,8 +865,8 @@ h3 {
 
 /* Footer */
 .footer {
-    background: #1a1a1a;
-    color: #ffffff;
+    background: var(--color-primary);
+    color: var(--color-white);
     padding: var(--spacing-lg) 0 var(--spacing-md);
     position: relative;
     z-index: 2;
