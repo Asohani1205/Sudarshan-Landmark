@@ -33,12 +33,13 @@
     <header>
         <div class="header-container">
             <a href="/" class="logo">
-                <img src="assets/images/projects/logo.jpg" alt="Sudarshan Landmark Logo">
+                <img src="assets/images/projects/logo_header.jpg" alt="Sudarshan Landmark Logo">
             </a>
             <nav class="main-nav">
                 <a href="/" class="active">Home</a>
                 <a href="/about.html">About</a>
                 <a href="/projects.html">Projects</a>
+                <a href="gallery.html">Gallery</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
@@ -46,8 +47,10 @@
 
     <!-- Video Background -->
     <div class="video-background">
-        <video autoplay muted loop playsinline>
-            <source src="assets/videos/video_sg.MP4" type="video/mp4">
+        <video id="background-video" autoplay muted loop playsinline>
+            <source src="assets/videos/video1.mp4" type="video/mp4">
+            <source src="assets/videos/video2.mp4" type="video/mp4">
+            <source src="assets/videos/video3.mp4" type="video/mp4">
         </video>
         <div class="video-overlay"></div>
     </div>
@@ -57,7 +60,7 @@
         <div class="hero-content" data-aos="fade-up">
             <h1>Welcome to</h1>
             <div class="hero-logo">
-                <img src="assets/images/projects/logo.jpg" alt="Sudarshan Landmark Logo">
+                <img src="assets/images/projects/logo_header.jpg" alt="Sudarshan Landmark Logo">
             </div>
             <p class="hero-subtitle">Discover Luxury Living at Its Finest</p>
             <p class="hero-description">Where elegance meets comfort, and dreams find their perfect address</p>
@@ -70,10 +73,6 @@
 
     <!-- Side Navigation -->
     <div class="side-nav">
-        <a href="#featured" class="side-nav-item">
-            <i class="fas fa-building"></i>
-            <span>Featured Projects</span>
-        </a>
         <a href="#why-choose-us" class="side-nav-item">
             <i class="fas fa-star"></i>
             <span>Why Choose Us</span>
@@ -82,9 +81,25 @@
             <i class="fas fa-home"></i>
             <span>Luxury Villa</span>
         </a>
+        <a href="#featured" class="side-nav-item">
+            <i class="fas fa-building"></i>
+            <span>Featured</span>
+        </a>
+        <a href="about.html" class="side-nav-item">
+            <i class="fas fa-info-circle"></i>
+            <span>About Us</span>
+        </a>
+        <a href="projects.html" class="side-nav-item">
+            <i class="fas fa-project-diagram"></i>
+            <span>Projects</span>
+        </a>
+        <a href="gallery.html" class="side-nav-item">
+            <i class="fas fa-images"></i>
+            <span>Gallery</span>
+        </a>
         <a href="#contact" class="side-nav-item">
             <i class="fas fa-envelope"></i>
-            <span>Get in Touch</span>
+            <span>Contact</span>
         </a>
     </div>
 
@@ -339,6 +354,23 @@
             easing: 'ease-in-out',
             once: true
         });
+
+        // Video Background Rotation
+        const videoElement = document.getElementById('background-video');
+        const videoSources = [
+            'assets/videos/video1.mp4',
+            'assets/videos/video2.mp4',
+            'assets/videos/video3.mp4'
+        ];
+        let currentVideoIndex = 0;
+
+        function playNextVideo() {
+            currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
+            videoElement.src = videoSources[currentVideoIndex];
+            videoElement.play();
+        }
+
+        videoElement.addEventListener('ended', playNextVideo);
 
         // Initialize Swiper for testimonials
         const testimonialSwiper = new Swiper('.testimonials-slider', {

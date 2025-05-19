@@ -11,6 +11,7 @@
     --color-overlay: rgba(0, 0, 0, 0.5);
     --color-gray: #ededed;
     --color-dark: #000000;
+    --color-background: #e8e8e8;  /* New darker background color */
     
     /* Typography */
     --font-heading: 'Century Gothic', 'Dubai', sans-serif;
@@ -49,7 +50,7 @@ body {
     color: var(--color-text);
     line-height: 1.6;
     overflow-x: hidden;
-    background: var(--color-white);
+    background: var(--color-background);
 }
 
 .container {
@@ -93,7 +94,7 @@ h3 {
     top: 0;
     left: 0;
     width: 100%;
-    background: var(--color-white);
+    background: var(--color-background);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     transition: var(--transition);
